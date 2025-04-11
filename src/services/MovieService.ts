@@ -35,7 +35,7 @@ export class MovieService {
     const winnerMovies = await this.repository.getWinnerMovies();
     const producerWins = new Map<string, number[]>();
 
-    // Group winning years by producer
+    // Agrupando os anos de premiação por produtor
     for (const movie of winnerMovies) {
       const producers = movie.producers.split(',').map(p => p.trim());
       for (const producer of producers) {
@@ -48,7 +48,7 @@ export class MovieService {
 
     const intervals: ProducerInterval[] = [];
 
-    // Calculate intervals for each producer
+    // Calculando os intervalos para cada produtor
     for (const [producer, years] of producerWins.entries()) {
       if (years.length < 2) continue;
 
@@ -62,7 +62,7 @@ export class MovieService {
       }
     }
 
-    // Find min and max intervals
+    // Encontrando os intervalos mínimo e máximo
     const minInterval = Math.min(...intervals.map(i => i.interval));
     const maxInterval = Math.max(...intervals.map(i => i.interval));
 

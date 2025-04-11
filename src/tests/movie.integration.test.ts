@@ -5,13 +5,13 @@ import movieRoutes from '../routes/movieRoutes';
 import { MovieService } from '../services/MovieService';
 import * as path from 'path';
 
-describe('Movie API Integration Tests', () => {
+describe('Testes de Integração da API de Filmes', () => {
   let app: express.Application;
 
   beforeAll(async () => {
     await DatabaseConfig.initialize();
     
-    // Import test data
+    // Importando dados de teste (deixei fixo com o próprio arquivo movielist.csv)
     const movieService = new MovieService();
     const csvPath = path.join(__dirname, '../../movielist.csv');
     await movieService.importMoviesFromCSV(csvPath);
@@ -21,7 +21,7 @@ describe('Movie API Integration Tests', () => {
   });
 
   describe('GET /api/producers/intervals', () => {
-    it('should return producer intervals', async () => {
+    it('deve retornar intervalos de produtores', async () => {
       const response = await request(app)
         .get('/api/producers/intervals')
         .expect(200);
@@ -29,11 +29,11 @@ describe('Movie API Integration Tests', () => {
       expect(response.body).toHaveProperty('min');
       expect(response.body).toHaveProperty('max');
       
-      // Verify the structure of the response
+      // Verificando a estrutura da resposta
       expect(Array.isArray(response.body.min)).toBe(true);
       expect(Array.isArray(response.body.max)).toBe(true);
 
-      // Verify the structure of interval objects
+      // Verificando a estrutura da disposição dos objetos
       if (response.body.min.length > 0) {
         const minInterval = response.body.min[0];
         expect(minInterval).toHaveProperty('producer');

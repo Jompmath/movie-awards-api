@@ -2,7 +2,7 @@ import { Database } from 'sqlite3';
 import { Movie } from '../models/Movie';
 import { DatabaseConfig } from '../config/database';
 
-// Add this interface to define the database row structure
+// Adicionando esta interface para definir a estrutura da linha do banco de dados.
 interface MovieRow {
     year: number;
     title: string;

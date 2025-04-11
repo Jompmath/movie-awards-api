@@ -6,7 +6,7 @@ export class DatabaseConfig {
 
   public static getInstance(): Database {
     if (!DatabaseConfig.instance) {
-      DatabaseConfig.instance = new sqlite3.Database(':memory:');
+      DatabaseConfig.instance = new sqlite3.Database(':memory:'); //Executando em memória para cumprir o requisito do teste
     }
     return DatabaseConfig.instance;
   }
