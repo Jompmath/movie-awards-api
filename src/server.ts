@@ -18,8 +18,8 @@ async function initializeApp() {
     const csvPath = process.argv[2];
     
     if (!csvPath) {
-      console.error('Please provide the CSV file path as an argument.');
-      console.error('Usage: npm start <csv-file-path>');
+      console.error('Por favor, forneça o caminho do arquivo CSV como argumento.');
+      console.error('Uso: npm start <caminho-do-arquivo-csv>');
       process.exit(1);
     }
 
