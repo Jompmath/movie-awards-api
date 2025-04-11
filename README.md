@@ -1,16 +1,49 @@
 
 # API de Premiações de Filmes
 
-Uma API RESTful que analisa dados de premiações de filmes e fornece informações sobre os intervalos de premiações dos produtores.
+Uma API RESTful para possibilitar a leitura da lista de indicados e vencedores
+da categoria Pior Filme do Golden Raspberry Awards.
 
-## Funcionalidades
+## Requisito do sistema
+
+ Ler o arquivo CSV dos filmes e inserir os dados em uma base de dados ao iniciar a
+ aplicação.
+
+## Requisitos da API
+
+Obter o produtor com maior intervalo entre dois prêmios consecutivos, e o que
+obteve dois prêmios mais rápido, seguindo a especificação de formato definida.
+
+Formato da resposta:
+```json
+{
+  "min": [
+    {
+      "producer": "Producer Name",
+      "interval": 1,
+      "previousWin": 2008,
+      "followingWin": 2009
+    }
+  ],
+  "max": [
+    {
+      "producer": "Producer Name",
+      "interval": 99,
+      "previousWin": 1900,
+      "followingWin": 1999
+    }
+  ]
+}
+```
+
+## Requisitos não funcionais do sistema
 
 - API RESTful seguindo o Nível 2 do Modelo de Maturidade de Richardson  
+- Testes de integração  
 - Banco de dados SQLite em memória  
 - Implementação em TypeScript  
 - Princípios SOLID  
-- Testes de integração  
-- Fonte de dados CSV configurável  
+
 
 ## Pré-requisitos
 
@@ -57,28 +90,6 @@ npm run test:integration
 ### GET /api/producers/intervals
 
 Retorna os produtores com os menores e maiores intervalos entre premiações consecutivas.
-
-Formato da resposta:
-```json
-{
-  "min": [
-    {
-      "producer": "Producer Name",
-      "interval": 1,
-      "previousWin": 2008,
-      "followingWin": 2009
-    }
-  ],
-  "max": [
-    {
-      "producer": "Producer Name",
-      "interval": 99,
-      "previousWin": 1900,
-      "followingWin": 1999
-    }
-  ]
-}
-```
 
 ## Formato do Arquivo CSV
 
