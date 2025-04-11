@@ -41,11 +41,6 @@ npm run dev -- /caminho/para/seu/movielist.csv
 npm start -- /caminho/para/seu/movielist.csv
 ```
 
-Por exemplo:  
-```bash
-npm start -- ./data/movielist.csv
-```
-
 O servidor será iniciado na porta 3000 por padrão.
 
 > **Nota**: É necessário fornecer o caminho para seu arquivo CSV ao iniciar a aplicação. O arquivo CSV deve conter os dados de premiações no formato correto.
