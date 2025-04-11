@@ -85,13 +85,6 @@ Formato da resposta:
 }
 ```
 
-## Desenvolvimento
-
-Para executar a aplicação em modo de desenvolvimento com recarregamento automático (hot reload):  
-```bash
-npm run dev -- /caminho/para/seu/movielist.csv
-```
-
 ## Formato do Arquivo CSV
 
 O arquivo CSV deve conter as seguintes colunas:
